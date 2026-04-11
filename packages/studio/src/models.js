@@ -8077,6 +8077,36 @@ export const v2vModels = [
     "videoField": "video_url",
     "hasPrompt": false,
     "description": "Remove watermarks, logos, captions, and unwanted text from videos."
+  },
+  {
+    "id": "kling-v2.6-std-motion-control",
+    "name": "Kling 2.6 Std Motion Control",
+    "endpoint": "kling-v2.6-std-motion-control",
+    "family": "kling",
+    "videoField": "video_url",
+    "imageField": "image_url",
+    "hasPrompt": true,
+    "description": "Kling v2.6 Pro Motion Control allows precise control over camera movement, subject motion, and scene dynamics during video generation."
+  },
+  {
+    "id": "kling-v3.0-std-motion-control",
+    "name": "Kling 3.0 Std Motion Control",
+    "endpoint": "kling-v3.0-std-motion-control",
+    "family": "kling",
+    "videoField": "video_url",
+    "imageField": "image_url",
+    "hasPrompt": true,
+    "description": "Kling V3.0 Standard Motion Control allows for precise control over the camera and subject movement in generated videos."
+  },
+  {
+    "id": "kling-v3.0-pro-motion-control",
+    "name": "Kling 3.0 Pro Motion Control",
+    "endpoint": "kling-v3.0-pro-motion-control",
+    "family": "kling",
+    "videoField": "video_url",
+    "imageField": "image_url",
+    "hasPrompt": true,
+    "description": "Kling V3.0 Pro Motion Control provides the highest level of detail and control for video generation."
   }
 ];
 
