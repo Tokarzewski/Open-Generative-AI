@@ -8,9 +8,9 @@
 
 ### Related projects
 
-> **Open-source Weavy, Flora Fauna Freepik Spaces, Krea nodes alternative -> https://github.com/SamurAIGPT/Vibe-Workflow
+> **Open-source Weavy, Flora Fauna Freepik Spaces, Krea nodes alternative** -> https://github.com/SamurAIGPT/Vibe-Workflow
 
-> **Open-source multi-modal chatbot and Poe alternative -> https://github.com/Anil-matcha/Open-Poe-AI 
+> **Open-source multi-modal chatbot and Poe alternative** -> https://github.com/Anil-matcha/Open-Poe-AI 
 
 ## 🌐 Try it Online — No Install Required
 
