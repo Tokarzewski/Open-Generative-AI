@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, MarketingStudio, WorkflowStudio, AgentStudio, getUserBalance } from 'studio';
+import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, MarketingStudio, WorkflowStudio, AgentStudio, AppsStudio, getUserBalance } from 'studio';
 import axios from 'axios';
 import ApiKeyModal from './ApiKeyModal';
 
@@ -14,6 +14,7 @@ const TABS = [
   { id: 'marketing', label: 'Marketing Studio' },
   { id: 'workflows', label: 'Workflows' },
   { id: 'agents', label: 'Agents' },
+  { id: 'apps', label: 'Explore Apps' },
 ];
 
 const STORAGE_KEY = 'muapi_key';
@@ -44,6 +45,7 @@ export default function StandaloneShell() {
   const getInitialTab = () => {
     if (idFromParams || slug.includes('workflow')) return 'workflows';
     if (slug.includes('agents')) return 'agents';
+    if (slug.includes('apps')) return 'apps';
     const firstSegment = slug[0];
     if (firstSegment && TABS.find(t => t.id === firstSegment)) return firstSegment;
     return 'image';
@@ -68,6 +70,8 @@ export default function StandaloneShell() {
         setActiveTab('workflows');
     } else if (slug.includes('agents')) {
         setActiveTab('agents');
+    } else if (slug.includes('apps')) {
+        setActiveTab('apps');
     } else {
         const firstSegment = slug[0];
         if (firstSegment && TABS.find(t => t.id === firstSegment)) {
@@ -306,6 +310,7 @@ export default function StandaloneShell() {
         {activeTab === 'marketing' && <MarketingStudio apiKey={apiKey} droppedFiles={droppedFiles} onFilesHandled={handleFilesHandled} />}
         {activeTab === 'workflows' && <WorkflowStudio apiKey={apiKey} isHeaderVisible={isHeaderVisible} onToggleHeader={setIsHeaderVisible} />}
         {activeTab === 'agents' && <AgentStudio apiKey={apiKey} isHeaderVisible={isHeaderVisible} onToggleHeader={setIsHeaderVisible} />}
+        {activeTab === 'apps' && <AppsStudio apiKey={apiKey} />}
       </div>
 
       {/* Settings Modal */}

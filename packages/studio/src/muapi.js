@@ -585,3 +585,33 @@ export async function calculateDynamicCost(apiKey, taskName, payload) {
     }
     return await response.json();
 }
+
+export async function registerAppInterest(apiKey, appName) {
+    const response = await fetch(`${BASE_URL}/app/interest`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey
+        },
+        body: JSON.stringify({ app_name: appName })
+    });
+    if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`Failed to register interest: ${response.status} - ${errText.slice(0, 100)}`);
+    }
+    return await response.json();
+}
+
+export async function getAppInterests(apiKey) {
+    const response = await fetch(`${BASE_URL}/app/interests`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey
+        }
+    });
+    if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`Failed to fetch interests: ${response.status} - ${errText.slice(0, 100)}`);
+    }
+    return await response.json();
+}
