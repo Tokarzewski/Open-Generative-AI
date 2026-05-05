@@ -130,8 +130,13 @@ export function VideoStudio() {
             }
             if (!imageMode) {
                 imageMode = true;
-                selectedModel = allI2V[0].id;
-                selectedModelName = allI2V[0].name;
+                const currentT2V = allT2V.find(m => m.id === selectedModel);
+                const sibling = currentT2V?.family
+                    ? allI2V.find(m => m.family === currentT2V.family)
+                    : null;
+                const target = sibling || allI2V[0];
+                selectedModel = target.id;
+                selectedModelName = target.name;
                 document.getElementById('v-model-btn-label').textContent = selectedModelName;
                 updateControlsForModel(selectedModel);
             }
